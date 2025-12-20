@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -75,4 +74,4 @@ export default defineConfig([
 =======
 # IkellFront
 Project Management System built with React. It allows teams to manage projects, tasks, and bugs efficiently. Supports four roles: Super Admin (company and user management), Company Owner, Project Owner, and Developer. Designed to improve collaboration using Kanban-style workflows.
->>>>>>> 55cf5e5e9f5e791ffd9145851c1891df8f6d0341
+
