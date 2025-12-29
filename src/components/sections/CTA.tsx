@@ -1,3 +1,6 @@
+import React from 'react';
+import Input from '../ui/Input';
+
 const CTA = () => {
   return (
     <section id="contact" className="bg-gray py-20 sm:py-24 md:py-32 relative overflow-hidden">
@@ -13,48 +16,33 @@ const CTA = () => {
             <div className="relative z-10">
               <form className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-sm sm:text-base"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-sm sm:text-base"
-                      placeholder="Your email"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company
-                  </label>
-                  <input
+                  <Input
                     type="text"
-                    id="company"
-                    name="company"
-                    className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-sm sm:text-base"
-                    placeholder="Your company name"
+                    id="name"
+                    name="name"
+                    label="Name"
+                    placeholder="Your name"
+                    required
+                  />
+                  
+                  <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    label="Email"
+                    placeholder="Your email"
                     required
                   />
                 </div>
+                
+                <Input
+                  type="text"
+                  id="company"
+                  name="company"
+                  label="Company"
+                  placeholder="Your company name"
+                  required
+                />
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
