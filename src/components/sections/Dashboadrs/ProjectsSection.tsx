@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Sidebar from '../layout/Sidebar';
+import Sidebar from '../../layout/Sidebar';
 
 export default function ProjectsSection() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f8fafb] flex h-screen">
+    <div className="min-h-screen bg-[#f8fafb]">
       <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       
-      <div className={`flex-1 p-8 overflow-auto`}>
+      <div className={`flex-1 p-8 overflow-auto transition-all duration-200 ${isCollapsed ? 'ml-16' : 'ml-64'}`}>
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Projects</h1>
           

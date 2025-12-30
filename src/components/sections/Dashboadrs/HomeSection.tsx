@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../layout/Sidebar';
+import Sidebar from '../../layout/Sidebar';
 
 export default function HomeSection() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -11,12 +11,12 @@ export default function HomeSection() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafb] flex h-screen">
+    <div className="min-h-screen bg-[#f8fafb]">
       <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       
-      <div className={`flex-1 p-8 overflow-auto`}>
+      <div className={`flex-1 p-8 overflow-auto transition-all duration-200 ${isCollapsed ? 'ml-16' : 'ml-64'}`}>
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Inicio</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Home</h1>
           
           {/* Welcome Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">

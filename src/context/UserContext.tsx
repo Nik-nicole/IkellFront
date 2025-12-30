@@ -7,6 +7,7 @@ interface UserData {
   role: string;
   email: string;
   photo: string;
+  banner?: string;
   hasCustomPhoto?: boolean; // Para saber si la foto es personalizada
 }
 
@@ -15,6 +16,7 @@ interface UserContextType {
   updateUserData: (data: UserData) => void;
   updateAvatar: (name: string) => void;
   updatePhoto: (photo: string, isCustom?: boolean) => void;
+  updateBanner: (banner: string) => void;
 }
 
 const defaultUserData: UserData = {
@@ -23,6 +25,7 @@ const defaultUserData: UserData = {
   role: 'Administrator',
   email: 'admin@company.com',
   photo: generateUserAvatar('Super Admin', 200), // Avatar dinámico por defecto
+  banner: 'https://images.unsplash.com/photo-1553877522-43269d4ea984', // Banner por defecto
   hasCustomPhoto: false // Por defecto no tiene foto personalizada
 };
 
@@ -42,7 +45,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
     return defaultUserData;
   };
 
-  const [userData, setUserData] = useState<UserData>(loadUserData);
+  const [userData, setUserData] = useState<UserData>(() => loadUserData());
 
   // Guardar en localStorage cada vez que cambien los datos
   const saveUserData = (data: UserData) => {
@@ -94,8 +97,18 @@ export function UserProvider({ children }: { children: ReactNode }) {
     saveUserData(newData);
   };
 
+  // Función para actualizar el banner
+  const updateBanner = (banner: string) => {
+    const newData = {
+      ...userData,
+      banner
+    };
+    setUserData(newData);
+    saveUserData(newData);
+  };
+
   return (
-    <UserContext.Provider value={{ userData, updateUserData, updateAvatar, updatePhoto }}>
+    <UserContext.Provider value={{ userData, updateUserData, updateAvatar, updatePhoto, updateBanner }}>
       {children}
     </UserContext.Provider>
   );

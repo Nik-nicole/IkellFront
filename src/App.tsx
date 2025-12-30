@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import UserSection from './components/sections/UserSection';
-import HomeSection from './components/sections/HomeSection';
-import CompaniesSection from './components/sections/CompaniesSection';
-import ProjectsSection from './components/sections/ProjectsSection';
-import WorkersSection from './components/sections/WorkersSection';
+import UserSection from './components/sections/Dashboadrs/UserSection';
+import HomeSection from './components/sections/Dashboadrs/HomeSection';
+import CompaniesSection from './components/sections/Dashboadrs/CompaniesSection';
+import ProjectsSection from './components/sections/Dashboadrs/ProjectsSection';
+import WorkersSection from './components/sections/Dashboadrs/WorkersSection';
 import { UserProvider } from './context/UserContext';
 import './index.css';
 
